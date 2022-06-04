@@ -1,0 +1,227 @@
+@font-face {
+  font-family: font;
+  src: url(public/COOLUMBUS.woff);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(public/roboto.woff);
+}
+
+:root {
+  --main-color: #E8E8E8;
+  --font-color: #141414;
+  --back-color: #ddd;
+  --back-color-dark: #222;
+  --mouse-x:0;
+  --mouse-y:0;
+}
+
+*{
+  margin:0;
+  padding:0;
+
+}
+html{
+  overflow: hidden;
+  cursor:none;
+  scroll-behavior: smooth;
+}
+
+body{
+  color:var(--font-color);
+  background-color:var(--main-color) ;
+}
+
+.loader{
+  width:100vw;
+  height: 100vh;
+  background-color: #141414;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderText{
+  color:#E8E8E8;
+  font-family: font;
+  opacity:1;
+  letter-spacing: 4px;
+}
+
+.cursor {
+  pointer-events: none;
+}
+
+.cursor__ball {
+  position: fixed;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  z-index: 21;
+}
+
+circle {
+    fill: #f7f8fa;
+}
+
+.overflow{
+  overflow-y: visible;
+}
+
+header{
+  position: fixed;
+  top:0;
+  left:0;
+  width:94%;
+  z-index:3;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  width:80px;
+  height:80px;
+  border-radius: 50%;
+  background-color: var(--font-color);;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 1.6vw;
+  font-family: roboto;
+  font-weight: lighter;
+}
+
+li {
+  float: left;
+}
+
+.presentation{
+  position: absolute;
+  top: 50%;
+  left:15vw;
+  transform: translateY(-50%);
+  color:var(--back-color)
+}
+
+.title{
+  font-family: roboto;
+  font-size: 8vw;
+}
+
+.creative{
+  margin-left:10%;
+}
+
+.developer{
+  margin-left:15%;
+}
+
+
+
+
+#canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  pointer-events: none;
+}
+
+.contents{
+  position: absolute;
+  top:50vh;
+  transform: translateY(-50%);
+  width: 300vw;
+  font-family: roboto;
+}
+
+.materia{
+  position: relative;
+  width:19.47vw;
+  margin-right: 20.8vw;
+  float: left;
+}
+
+
+
+.info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.immagine1, .immagine2, .immagine3, .immagine4, .immagine5{
+  height:50vh;
+  background-color:#557F81;
+  margin-top:15px;
+  margin-bottom:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: font;
+  font-size: 3vw;
+}
+
+.immagine2, .immagine4{
+  background-color: #AB8383;
+}
+
+.name{
+  position:absolute;
+  left:3%;
+  bottom:3%;
+  font-size:7vw;
+  font-family: roboto;
+  opacity: 0;
+  transform: translateX(5vh);
+}
+
+.show{
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* .immagine1{
+  background-image: url('public/img/barilla.png');
+  background-position: 50% 0;
+  background-size: 235%;
+  /* -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  /* filter: grayscale(100%); */ 
+/*} 
+*/
+
+.page{
+  width: 100%;
+  height:200vh;
+  background-color: var(--main-color);
+  position: absolute;
+  top:0;
+  left:0;
+  transform: translateY(100vh) skew(10deg);
+}
+
+.projectTitle{
+  font-family: font;
+  font-size:5vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .contents{
+    width: 500vw;
+  }
+   .materia{
+      width:50vw;
+   }
+  }
